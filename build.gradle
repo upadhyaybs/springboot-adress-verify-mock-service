@@ -25,6 +25,18 @@ application {
     mainClass = 'com.avarna.AddressVerifyApplication'
 }
 
+tasks {
+    // Disable the creation of the plain JAR
+    jar {
+        enabled = false
+    }
+
+    // Spring Boot's fat JAR configuration (this will still be created)
+    bootJar {
+        archiveFileName = 'address-verify-application.jar' // Optionally specify a custom name
+    }
+}
+
 jar {
     manifest {
         attributes(
