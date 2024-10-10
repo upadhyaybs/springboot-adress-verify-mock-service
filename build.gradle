@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
     id 'org.springframework.boot' version '3.2.3'
     id 'io.spring.dependency-management' version '1.1.4'
 }
@@ -18,6 +19,18 @@ dependencies {
 
     implementation 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+}
+
+application {
+    mainClass = 'com.avarna.AddressVerifyApplication'
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'com.avarna.AddressVerifyApplication'
+        )
+    }
 }
 
 test {
